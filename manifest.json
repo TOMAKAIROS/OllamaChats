@@ -1,10 +1,10 @@
 {
   "name": "OllamaChats",
-  "description": "An extension that lets your Ollama server chat directly in a chatbox on the current page. This feature is currently being tested with ChatGPT",
+  "description": "An extension that lets your Ollama server chat with ChatGPT.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "frontend.html",
-    "default_icon": "OllamaChats.png"
+    "default_icon": "OllamaChatsIcon.png"
   }
 }
