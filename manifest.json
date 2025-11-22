@@ -1,6 +1,6 @@
 {
   "name": "OllamaChats",
-  "description": "An extension that lets your Ollama server chat with ChatGPT.",
+  "description": "An extension that lets your Ollama server physically chat with ChatGPT.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
