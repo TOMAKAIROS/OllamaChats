@@ -6,5 +6,8 @@
   "action": {
     "default_popup": "frontend.html",
     "default_icon": "OllamaChatsIcon.png"
+  },  
+  "background": {
+    "service_worker": "background.js"
   }
 }
