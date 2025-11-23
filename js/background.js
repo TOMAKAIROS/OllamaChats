@@ -1,5 +1,7 @@
 chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
-    console.log(msg); // Testing if msg object did come through from search.js
+    if (msg.type === "getModels") {
+        console.log(msg);
+    }
 
-  return true; // required for async sendResponse
+  return true;
 });
