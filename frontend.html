@@ -1,5 +1,18 @@
 <html>
   <body>
     <img src="./OllamaChatsLogo.png" alt="OllamaChats" style="width:200px;">
+<div style="display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 10px">
+      <select name="api_url" id="api_url" style="border-radius: 8px; height: 25px;">
+        <option value="http://localhost:11434/api/generate">http://localhost:11434/api/generate</option>
+        <option value="https://ollama.com/api/generate">https://ollama.com/api/generate</option>
+      </select>
+<div style="display: flex; max-width; gap:5px; align-items: center; font-weight:bold;">
+        <button>Search</button>
+        Model:
+        <select name="model" id="model" style="border-radius: 8px; height: 25px;">
+          <option value=""></option> <!-- Need to parse existing models from localhost 11434 -->
+        </select>
+      </div>
+    </div>
   </body>
 </html>
