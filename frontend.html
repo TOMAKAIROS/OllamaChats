@@ -5,12 +5,11 @@
         <div style="display: flex; align-items: center; gap:5px;">  
           <h style="font-size: 14px;">URL:</h>
           <select name="api_url" id="api_url" style="border-radius: 8px; height: 25px;">
-            <option value="http://localhost:11434/api/generate">http://localhost:11434/api/generate</option>
-            <option value="https://ollama.com/api/generate">https://ollama.com/api/generate</option>
+            <option value="http://localhost:11434">http://localhost:11434</option>
           </select>
         </div>
       <div style="display: flex; gap:5px; align-items: center; font-weight:bold;">
-        <button style="cursor: pointer; font-weight:bold;">Search</button>
+        <button style="cursor: pointer; font-weight:bold;" id="search_btn">Search</button>
         <h style="font-size: 14px;">Model:</h>
         <select name="model" id="model" style="border-radius: 8px; height: 25px; width: 100%;">
           <option value=""></option> <!-- Need to parse existing models from localhost 11434 -->
@@ -18,5 +17,6 @@
       </div>
       <button style="cursor: pointer; font-weight:bold; width:50px; align-self: center;">Start</button>
     </div>
+    <script src="./js/search.js"></script>
   </body>
 </html>
