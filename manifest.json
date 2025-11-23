@@ -6,7 +6,10 @@
   "action": {
     "default_popup": "frontend.html",
     "default_icon": "OllamaChatsIcon.png"
-  },  
+  },
+  
+  "host_permissions": ["http://localhost:11434/*"],
+
   "background": {
     "service_worker": "./js/background.js"
   }
