@@ -1,23 +1,31 @@
 <html>
-  <body style="margin:0; padding:0; background-color: rgb(255, 255, 255); width: 300px; display:flex; flex-direction: column; justify-content: center; align-items: center; padding:10px;">
-    <img src="./OllamaChatsLogo.png" alt="OllamaChats" style="width:200px;" draggable="false">
-      <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 10px; font-weight:bold;">
-        <div style="display: flex; align-items: center; gap:5px;">  
-          <h style="font-size: 14px;">URL:</h>
-          <select name="api_url" id="api_url" style="border-radius: 8px; height: 25px; width: 100%;">
-            <option value="http://localhost:11434">http://localhost:11434</option>
-          </select>
+<head>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <img src="./OllamaChatsLogo.png" alt="OllamaChats" width="200" draggable="false">
+    <div class="container">
+
+        <div class="row">
+            <span class="text_header">URL:</span>
+            <select id="api_url">
+                <option value="http://localhost:11434">http://localhost:11434</option>
+            </select>
         </div>
-      <div style="display: flex; gap:5px; align-items: center; font-weight:bold;">
-        <button style="cursor: pointer; font-weight:bold;" id="search_btn">Search</button>
-        <h style="font-size: 14px;">Model:</h>
-        <select name="model" id="model" style="border-radius: 8px; height: 25px; width: 100%;">
-          <option value=""></option> <!-- Need to parse existing models from localhost 11434 -->
-        </select>
-      </div>
-      <button style="cursor: pointer; font-weight:bold; width:50px; align-self: center;" id="start_btn">Start</button>
+
+        <div class="row">
+            <button id="search_btn">Search</button>
+            <span class="text_header">Model:</span>
+            <select id="model"></select>
+        </div>
+
+        <textarea id="prompt" placeholder="Type a message..."></textarea>
+
+        <button id="start_btn">Start</button>
+
     </div>
     <script src="./js/search.js"></script>
     <script src="./js/converse.js"></script>
-  </body>
+</body>
 </html>

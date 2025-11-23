@@ -1,0 +1,75 @@
+body {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.text_header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 3px;
+    margin-left: 2px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#api_url, 
+#model, 
+#prompt {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #fafafa;
+}
+
+#prompt {
+    min-height: 35px;
+    max-height: 180px;
+    resize: none;
+    overflow-y: hidden;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1b1b1bff;
+    color: #ffffffff;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+button:hover {
+    background-color: #080808ff;
+    color: #9c9c9cff;
+}
+
+#start_btn {
+    width: 60px;
+    align-self: center;
+}
