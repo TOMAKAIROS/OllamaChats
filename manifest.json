@@ -7,10 +7,20 @@
     "default_popup": "frontend.html",
     "default_icon": "OllamaChatsIcon.png"
   },
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": ["js/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
   
   "host_permissions": ["http://localhost:11434/*"],
 
   "background": {
-    "service_worker": "./js/background.js"
+    "service_worker": "js/background.js"
   }
 }
