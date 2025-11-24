@@ -54,12 +54,29 @@ async function startConverse(msg, sendResponse) {
         }
 
         const ollamaResponse = await response.json();
-        console.log(msg.model + ":", ollamaResponse.message.content);
+        const content = ollamaResponse.message.content;
 
+        console.log(msg.model + ":", content);
+
+        // Send response back to popup or sender
         sendResponse({
             success: true,
-            response: ollamaResponse.message.content || "missing message?"
+            response: content
         });
+
+        // ALSO send the response "content" variable to content.js which can only be retrieved by chatgpt.com (see manifest for more info on how this is done.)
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                { action: "insert_into_chat", text: content },
+                (response) => {
+                    if (chrome.runtime.lastError) {
+                        console.warn("⚠️ sendMessage error:", chrome.runtime.lastError.message);
+                    }
+                }
+            );
+        });
+
 
     } catch (err) {
         sendResponse({
@@ -68,6 +85,7 @@ async function startConverse(msg, sendResponse) {
         });
     }
 }
+
 
 // Listen for messages sent from any javscript parts of the extension.
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
