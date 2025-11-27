@@ -1,4 +1,20 @@
-document.getElementById("start_btn").addEventListener("click", () => {
+async function checkCurrentWindow() {
+  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+  const currentTab = tabs[0];
+
+  if (!currentTab || !currentTab.url) {
+    return false;
+  }
+
+  return currentTab.url.includes("https://chatgpt.com/");
+}
+
+document.getElementById("start_btn").addEventListener("click", async () => {
+    const isChatGPT = await checkCurrentWindow();
+    if (!isChatGPT) {
+        alert('Please navigate to "https://chatgpt.com/" first.');
+        return;
+    }
     const apiUrl = document.getElementById("api_url").value; 
     const model = document.getElementById("model").value;
     const prompt = document.getElementById("prompt").value;
